@@ -4,6 +4,10 @@ import './index.css';
 import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 
+let model = {
+    click: 0
+}
+
 ReactDOM.render(<App times="2"/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
