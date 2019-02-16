@@ -8,9 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-            <div>This div cliced {this.props.times} times!</div>
-          </p>
+            <div onClick={this.props.onClick}>This div cliced {this.props.times} times!</div>
           <a
             className="App-link"
             href="https://reactjs.org"
