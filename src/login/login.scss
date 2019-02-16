@@ -1,0 +1,9 @@
+$bacgroundColor: lightblue;
+$primaryColor: red;
+
+div {
+    background-color: $bacgroundColor;
+    padding: 5px;
+    color: $primaryColor;
+    margin: 2px;
+}
