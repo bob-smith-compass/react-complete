@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <div onClick={this.props.onClick}>This div cliced {this.props.times} times!</div>
+            <div onClick={this.props.onClick}>This div cliked {this.props.times} times!</div>
             <Login now={new Date().toISOString()} />
           <a
             className="App-link"

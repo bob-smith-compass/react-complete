@@ -6,6 +6,12 @@ export default function Login(props) {
     <div>
       {/* <div>Login time is {this.props.now}</div> */} {/* Error */}
       <div>Login time is {props.now}</div>
+      Username: <input type="text" value="jdoe"/>
+      Password: <input type="text" value="pass"/>
+      <textarea name="" id="" cols="30" rows="10">
+      HTML `textarea`
+      </textarea>
+      <textarea name="" id="" cols="30" rows="10" value="React textarea"/>
     </div>
   )
 }
