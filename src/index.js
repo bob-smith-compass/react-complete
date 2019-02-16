@@ -8,7 +8,10 @@ let model = {
     times: 2
 }
 
-ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!')}} times={model.times}/>, document.getElementById('root'));
+function render() {
+    ReactDOM.render(<App onClick={()=> {model.times += 1; alert('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
+}
+render();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
