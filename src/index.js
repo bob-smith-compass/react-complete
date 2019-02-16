@@ -5,11 +5,11 @@ import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 
 let model = {
-    times: 2
+    times: 0
 }
 
 function render() {
-    ReactDOM.render(<App onClick={()=> {model.times += 1; alert('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
+    ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
 }
 render();
 
