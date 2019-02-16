@@ -7,9 +7,41 @@ import * as serviceWorker from './serviceWorker';
 let model = {
     times: 0
 }
-
+/**
+ * React class component
+ */
+function Sum(props) {
+    return(
+        <h1>{props.a} + {props.b} = { props.a + props.b }</h1>
+    )
+}
+/**
+ * React class component
+ */
+class Person extends React.Component {
+    render(props) {
+        return(
+            <h1>{this.props.a} + {this.props.b} = { this.props.a + this.props.b }</h1>
+        )
+    }
+}
+class ClickCounter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {clicks: 0}
+    }
+    render(props) {
+        return(
+            <div onClick={() => {this.setState({clicks: this.state.clicks + 1})}} >This div cliked {this.state.clicks} times!</div>
+        )
+    }
+}
 function render() {
-    ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
+    // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
+    // ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
+    // ReactDOM.render(<Sum a={2} b={3}></Sum>, document.getElementById('root'));
+    // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
+    ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
 }
 render();
 
