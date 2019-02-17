@@ -8,15 +8,16 @@ import PropTypes from 'prop-types';
 let model = {
     times: 0
 }
+/** TypeScrip static type checking */
+// interface SumProps {
+//     a: number,
+//     b: number,
+// }
 /**
- * React class component
+ * React function component
  */
-
-interface SumProps {
-    a: number,
-    b: number,
-}
-function Sum(props: SumProps) {
+// function Sum(props: SumProps) {
+function Sum(props) {
     return(
         <h1>{props.a} + {props.b} = { props.a + props.b }</h1>
     )
