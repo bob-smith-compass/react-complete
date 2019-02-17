@@ -86,3 +86,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## Unite Testing React with Jest and airbnb Enzyme
 
 `yarn add enzyme enzyme-adapter-react-16`
+
+## React Router
+`yarn add react-router-dom`
