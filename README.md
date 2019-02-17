@@ -81,4 +81,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
  * React function component
  */
 // function Sum(props: SumProps) {
-    ```
+```
+
+## Unite Testing React with Jest and airbnb Enzyme
+
+`yarn add enzyme enzyme-adapter-react-16`
