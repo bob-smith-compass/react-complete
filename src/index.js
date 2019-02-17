@@ -44,9 +44,9 @@ class ClickCounter extends React.Component {
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
     // ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
-    // ReactDOM.render(<Sum a={2} b={3}></Sum>, document.getElementById('root'));
+    ReactDOM.render(<Sum  b={3}></Sum>, document.getElementById('root'));
     // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
-    ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
+    // ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
 }
 render();
 
