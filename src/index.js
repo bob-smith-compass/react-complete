@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
+import PropTypes from 'prop-types';
 
 let model = {
     times: 0
@@ -14,6 +15,10 @@ function Sum(props) {
     return(
         <h1>{props.a} + {props.b} = { props.a + props.b }</h1>
     )
+}
+// Sum.PropTypes = {
+//     a: PropTypes.number.isRequired,
+//     b: PropTypes.number.isRequired,
 }
 /**
  * React class component
