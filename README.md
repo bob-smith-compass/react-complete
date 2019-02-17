@@ -69,3 +69,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ## React validation with PropTypes
 `sudo npm i prop-types`
+
+## TypeScript and Flow
+
+```/** TypeScrip and Flow static type checking */
+// interface SumProps {
+//     a: number,
+//     b: number,
+// }
+/**
+ * React function component
+ */
+// function Sum(props: SumProps) {
+    ```

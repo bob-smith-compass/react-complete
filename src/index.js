@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 let model = {
     times: 0
-}
-/** TypeScrip static type checking */
+};
+/** TypeScrip and Flow static type checking */
 // interface SumProps {
 //     a: number,
 //     b: number,
