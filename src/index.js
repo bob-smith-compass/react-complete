@@ -16,9 +16,9 @@ function Sum(props) {
         <h1>{props.a} + {props.b} = { props.a + props.b }</h1>
     )
 }
-// Sum.PropTypes = {
-//     a: PropTypes.number.isRequired,
-//     b: PropTypes.number.isRequired,
+Sum.propTypes = {
+    a: PropTypes.number.isRequired,
+    b: PropTypes.number.isRequired,
 }
 /**
  * React class component
