@@ -6,8 +6,8 @@ export default function Login(props) {
     <div>
       {/* <div>Login time is {this.props.now}</div> */} {/* Error */}
       <div>Login time is {props.now}</div>
-      Username: <input type="text" value="jdoe"/>
-      Password: <input type="text" value="pass"/>
+      Username: <input type="text" value={props.username}/>
+      Password: <input type="password" value={props.password}/>
       <textarea name="" id="" cols="30" rows="10">
       HTML `textarea`
       </textarea>
