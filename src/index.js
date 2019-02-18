@@ -19,7 +19,15 @@ let model = {
 // function Sum(props: SumProps) {
 function Sum(props) {
     return(
-        <h1>{props.a} + {props.b} = { props.a + props.b }</h1>
+        <h1 >{props.a} + {props.b} = { props.a + props.b }</h1>
+    )
+}
+// function Sum(props: SumProps) {
+function SumClicker({handleClick}) {
+    return(
+        // <button onClick={(e)=> {handleClick('A');}}>{props.a} + {props.b} = { props.a + props.b }</h1>
+        // <button onClick={(e)=> {handleClick('A');}}>Pass data as props</button>
+        <button onClick={(e)=> {handleClick(e);}}>Pass data as props</button>
     )
 }
 Sum.propTypes = {
@@ -52,7 +60,8 @@ function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
     // ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
     // ReactDOM.render(<Sum  a={2} b={3}></Sum>, document.getElementById('root'));
-    ReactDOM.render(<Sum  {...props}></Sum>, document.getElementById('root'));
+    // ReactDOM.render(<Sum  {...props}></Sum>, document.getElementById('root'));
+    ReactDOM.render(<SumClicker handleClick={(l)=> console.log(l)}></SumClicker>, document.getElementById('root'));
     // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
     // ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
 }
