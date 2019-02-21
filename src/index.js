@@ -109,17 +109,22 @@ class ECompoment extends React.Component {
     constructor(props) {
         super(props)
         this.state = { fname: 'David', lname: 'Shams' }
+        this.onChar = this.onChar.bind(this)
     }
     handleSubmit(e) {
         e.preventDefault();
         console.log(`Submitting...`)
+    }
+    onChar(e) {
+        this.setState({fname: e.target.value})
+        console.log(e.value)
     }
     render(props) {
         return (
             <div>
                 <h3> EComponent </h3>
                 <form action="">
-                <input value={this.state.fname} type="text"/>
+                <input onChange={this.onChar} value={this.state.fname} type="text"/>
                 <input value={this.state.lname} type="text"/>
                 <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
