@@ -110,7 +110,8 @@ class ECompoment extends React.Component {
         super(props)
         this.state = { fname: 'David', lname: 'Shams' }
     }
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         console.log(`Submitting...`)
     }
     render(props) {
@@ -120,7 +121,7 @@ class ECompoment extends React.Component {
                 <form action="">
                 <input value={this.state.fname} type="text"/>
                 <input value={this.state.lname} type="text"/>
-                <button type="submit">Submit</button>
+                <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
             </div>
         )
