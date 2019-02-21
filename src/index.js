@@ -175,7 +175,14 @@ function Data({fname, lname}) {
 /**
  * View Function
  */
-const view = (model) => <div>{model.times}</div>
+const view = (model) => <div>{model.times}</div>;
+
+let intents = {
+    TICK: 'TICK',
+    START: 'START',
+    STOP: 'STOP',
+    RESET: 'RESET'
+}
 const props = { a: 2, b: 3 };
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
