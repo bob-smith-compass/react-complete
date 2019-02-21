@@ -108,7 +108,11 @@ function Events(props) {
 class ECompoment extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { fname: 'David', lname: 'Shams' }
+        this.state = { 
+            fname: 'David', 
+            lname: 'Shams',
+            clicked: 0
+         }
         this.onChar = this.onChar.bind(this)
     }
     handleSubmit(e) {
@@ -117,7 +121,7 @@ class ECompoment extends React.Component {
     }
     onChar(e) {
         this.setState({fname: e.target.value})
-        console.log(e.value)
+        console.log(e.target.value); // Get the letter pressed
     }
     render(props) {
         return (
