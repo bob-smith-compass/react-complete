@@ -19,17 +19,17 @@ let model = {
  */
 // function Sum(props: SumProps) {
 function Sum(props) {
-    return(
-        <h1 >{props.a} + {props.b} = { props.a + props.b }</h1>
+    return (
+        <h1 >{props.a} + {props.b} = {props.a + props.b}</h1>
     )
 }
 // function Sum(props: SumProps) {
-function SumClicker({handleClick}) {
-    return(
+function SumClicker({ handleClick }) {
+    return (
         <div>
-            <button onClick={(e)=> {handleClick('A');}}>A</button>
-            <button onClick={(e)=> {handleClick('B');}}>Pass data as props: B</button>
-            <button onClick={(e)=> {handleClick(e);}}>Pass data as props</button>
+            <button onClick={(e) => { handleClick('A'); }}>A</button>
+            <button onClick={(e) => { handleClick('B'); }}>Pass data as props: B</button>
+            <button onClick={(e) => { handleClick(e); }}>Pass data as props</button>
         </div>
     )
 }
@@ -40,10 +40,10 @@ function TicTacTo(numOfSquares, onSelection) {
     const makeSquares = v => <button key={v} id={v} onClick={event => {
         onSelection(event.target.id)
     }}>{v}</button>;
-    return(
+    return (
         <div>
             {/* {_.range(1, numOfSquares + 1).map(makeSquares)} */}
-            
+
             {/* for (let i = 0; i < numOfSquares; i++) {
                 makeSquares(i);
             } */}
@@ -60,45 +60,45 @@ Sum.propTypes = {
  */
 class Person extends React.Component {
     render(props) {
-        return(
-            <h1>{this.props.a} + {this.props.b} = { this.props.a + this.props.b }</h1>
+        return (
+            <h1>{this.props.a} + {this.props.b} = {this.props.a + this.props.b}</h1>
         )
     }
 }
 class ClickCounter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {clicks: 0}
+        this.state = { clicks: 0 }
     }
     render(props) {
-        return(
-            <div onClick={() => {this.setState({clicks: this.state.clicks + 1})}} >This div cliked {this.state.clicks} times!</div>
+        return (
+            <div onClick={() => { this.setState({ clicks: this.state.clicks + 1 }) }} >This div cliked {this.state.clicks} times!</div>
         )
     }
 }
-let state = {value: 'David'};
+let state = { value: 'David' };
 function Events(props) {
-    const clickHandler = function(e) {
+    const clickHandler = function (e) {
         console.log(e)
         // console.log(name);
     }
-    const inputClick = function(e) {
+    const inputClick = function (e) {
         console.log(e.pageX, e.pageY);
         e.preventDefault();
     }
-    const onGoTime = function(e) {
+    const onGoTime = function (e) {
         console.log(e);
         e.preventDefault();
     }
-    return(
+    return (
         <div>
             <form onSubmit={onGoTime}>
-            <input Ref="name" 
-            onClick={inputClick} type="text"/>
-            <input Ref="name" 
-            value={state.value}
-            onClick={inputClick} type="checkbox"/>
-            <button onClick={clickHandler}>Make event</button>
+                <input Ref="name"
+                    onClick={inputClick} type="text" />
+                <input Ref="name"
+                    value={state.value}
+                    onClick={inputClick} type="checkbox" />
+                <button onClick={clickHandler}>Make event</button>
             </form>
             <button onClick={onGoTime} type="submit">Subbmit</button>
         </div>
@@ -108,15 +108,25 @@ function Events(props) {
 class ECompoment extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {fname: 'David', lname: 'Shams'}
+        this.state = { fname: 'David', lname: 'Shams' }
+    }
+    handleSubmit() {
+        console.log(`Submitting...`)
     }
     render(props) {
         return (
-            <div>EComponent</div>
+            <div>
+                <h3> EComponent </h3>
+                <form action="">
+                <input value={this.state.fname} type="text"/>
+                <input value={this.state.lname} type="text"/>
+                <button type="submit">Submit</button>
+                </form>
+            </div>
         )
     }
 }
-const props = {a: 2, b: 3};
+const props = { a: 2, b: 3 };
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
     // ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
