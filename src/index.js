@@ -114,6 +114,7 @@ class ECompoment extends React.Component {
             clicked: 0
          }
         this.onChar = this.onChar.bind(this)
+        this.onEven = this.onEven.bind(this)
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -123,13 +124,17 @@ class ECompoment extends React.Component {
         this.setState({fname: e.target.value})
         console.log(e.target.value); // Get the letter pressed
     }
+    onEven(e) {
+        this.setState({clicked: this.state.clicked + 1});
+        console.log(`Clicked ${this.state.clicked} times.`);
+    }
     render(props) {
         return (
             <div>
                 <h3> EComponent </h3>
                 <form action="">
                 <input onChange={this.onChar} value={this.state.fname} type="text"/>
-                <input onChange={this.onChar} value={this.state.lname} type="text"/>
+                <input onClick={this.onEven} onChange={this.onChar} value={this.state.lname} type="text"/>
                 <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
             </div>
