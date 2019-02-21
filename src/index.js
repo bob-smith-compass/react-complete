@@ -112,10 +112,12 @@ class ECompoment extends React.Component {
         this.state = { 
             fname: 'David', 
             lname: 'Shams',
-            clicked: 0
+            clicked: 0,
+            textarea: ''
          }
         this.onChar = this.onChar.bind(this)
         this.onEven = this.onEven.bind(this)
+        this.textChange = this.textChange.bind(this)
         // this.propTypes = PropTypes({
             // fname: string
         // })
@@ -132,6 +134,10 @@ class ECompoment extends React.Component {
         this.setState({clicked: this.state.clicked + 1});
         console.log(`Clicked ${this.state.clicked} times.`);
     }
+    textChange(e) {
+        console.log(e.target.value);
+        this.setState({textarea: e.target.value})
+    }
     render(props) {
         return (
             <div>
@@ -139,6 +145,11 @@ class ECompoment extends React.Component {
                 <form action="">
                 <input onChange={this.onChar} value={this.state.fname} type="text"/>
                 <input onClick={this.onEven} onChange={this.onChar} value={this.state.lname} type="text"/>
+                <textarea name="" id="" cols="30" rows="10">
+                HTML 
+                </textarea>
+                {/* <textarea onChange={this.textChange} value={this.state.fname + ' ' + this.state.lname} name="" id="" cols="30" rows="10"></textarea> */}
+                <textarea onChange={this.textChange} value={this.state.textarea} name="" id="" cols="30" rows="10"></textarea>
                 <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
             </div>
