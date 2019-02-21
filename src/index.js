@@ -76,12 +76,32 @@ class ClickCounter extends React.Component {
         )
     }
 }
+let state = {value: 'David'};
 function Events(props) {
     const clickHandler = function(e) {
         console.log(e)
+        // console.log(name);
+    }
+    const inputClick = function(e) {
+        console.log(e.pageX, e.pageY);
+        e.preventDefault();
+    }
+    const onGoTime = function(e) {
+        console.log(e);
+        e.preventDefault();
     }
     return(
-        <button onClick={clickHandler}>Make event</button>
+        <div>
+            <form onSubmit={onGoTime}>
+            <input Ref="name" 
+            onClick={inputClick} type="text"/>
+            <input Ref="name" 
+            value={state.value}
+            onClick={inputClick} type="checkbox"/>
+            <button onClick={clickHandler}>Make event</button>
+            </form>
+            <button onClick={onGoTime} type="submit">Subbmit</button>
+        </div>
     )
 }
 
