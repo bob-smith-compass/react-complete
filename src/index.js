@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
 import { string } from 'postcss-selector-parser';
+// import Link from 'react-router-dom';
 
 let model = {
     times: 0
@@ -150,11 +151,18 @@ class ECompoment extends React.Component {
                 </textarea>
                 {/* <textarea onChange={this.textChange} value={this.state.fname + ' ' + this.state.lname} name="" id="" cols="30" rows="10"></textarea> */}
                 <textarea onChange={this.textChange} value={this.state.textarea} name="" id="" cols="30" rows="10"></textarea>
+                <Data fname={'David'} lname={'Shams'}/>
                 <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
             </div>
         )
     }
+}
+function Data({fname, lname}) {
+    return(
+        <div>{fname}-{lname}</div>
+    )
+
 }
 const props = { a: 2, b: 3 };
 function render() {
@@ -165,6 +173,7 @@ function render() {
     // ReactDOM.render(<SumClicker handleClick={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></SumClicker>, document.getElementById('root'));
     // ReactDOM.render(<Events ></Events>, document.getElementById('root'));
     ReactDOM.render(<ECompoment ></ECompoment>, document.getElementById('root'));
+    // ReactDOM.render(<BroswerRouter> <ECompoment ></ECompoment></BrowserRouter>, document.getElementById('root'));
     // ReactDOM.render(<TicTacTo numOfSquares={6} onSelection={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></TicTacTo>, document.getElementById('root'));
     // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
     // ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
