@@ -8,7 +8,7 @@ import _ from 'underscore';
 import { string } from 'postcss-selector-parser';
 // import Link from 'react-router-dom';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
-import { setInterval } from 'timers';
+// import { setInterval } from 'timers'; // without this will also work
 
 let model = {
     running: false,
@@ -18,6 +18,8 @@ let model = {
 };
 const update = (model, intent) => {
     const updates = {
+        'START': (model) => Object.assign(model, {running: true}),
+        'STOP': (model) => Object.assign(model, {running: false}),
         'TICK': (model) => Object.assign(model, {time: model.time + 1})
     };
     return updates[intent](model);
@@ -191,8 +193,17 @@ function Data({fname, lname}) {
 const view = (model) => {
     let minutes = Math.floor(model.time/60);
     let seconds = model.time - (minutes * 60);
+    function handleClic(e) {
+        console.log('Stopping');
+        // this.setState({running: false}); // Not here will not work
+        model = update(model, model.running? 'STOP': 'START');
+
+    }
     return(
-    <div>{minutes}:{seconds}</div>
+        <div>
+            <div>{minutes}:{seconds}</div>
+            <button onClick={handleClic}>{model.running? 'Stop': 'Start'}</button>
+        </div>
     )
 };
 
