@@ -76,6 +76,15 @@ class ClickCounter extends React.Component {
         )
     }
 }
+function Events(props) {
+    const clickHandler = function(e) {
+        console.log(e)
+    }
+    return(
+        <button onClick={clickHandler}>Make event</button>
+    )
+}
+
 const props = {a: 2, b: 3};
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
@@ -83,7 +92,8 @@ function render() {
     // ReactDOM.render(<Sum  a={2} b={3}></Sum>, document.getElementById('root'));
     // ReactDOM.render(<Sum  {...props}></Sum>, document.getElementById('root'));
     // ReactDOM.render(<SumClicker handleClick={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></SumClicker>, document.getElementById('root'));
-    ReactDOM.render(<TicTacTo numOfSquares={6} onSelection={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></TicTacTo>, document.getElementById('root'));
+    ReactDOM.render(<Events ></Events>, document.getElementById('root'));
+    // ReactDOM.render(<TicTacTo numOfSquares={6} onSelection={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></TicTacTo>, document.getElementById('root'));
     // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
     // ReactDOM.render(<ClickCounter a={2} b={3}></ClickCounter>, document.getElementById('root'));
 }
