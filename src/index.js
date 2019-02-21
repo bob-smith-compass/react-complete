@@ -11,7 +11,8 @@ import {BrowserRouter, Link, Route} from 'react-router-dom';
 
 let model = {
     running: false,
-    times: 0
+    times: 0,
+    time: new Date()
 };
 /** TypeScrip and Flow static type checking */
 // interface SumProps {
@@ -175,7 +176,13 @@ function Data({fname, lname}) {
 /**
  * View Function
  */
-const view = (model) => <div>{model.times}</div>;
+const view = (model) => {
+    let minutes = Math.floor(model.time/60);
+    let seconds = model.time - (minutes * 60);
+    return(
+    <div>{minutes}:{seconds}</div>
+    )
+};
 
 let intents = {
     TICK: 'TICK',
