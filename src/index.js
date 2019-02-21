@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import _ from 'underscore';
 import { string } from 'postcss-selector-parser';
 // import Link from 'react-router-dom';
+import {BrowserRouter, Link, Route} from 'react-router-dom';
 
 let model = {
     times: 0
@@ -130,6 +131,8 @@ class ECompoment extends React.Component {
         // this.setState({
         //     data: this.state.concat(this.state.fname)
         // })
+        // console.log(this.state.fname); // error
+        console.log(e.target.value);
     }
     onChar(e) {
         this.setState({fname: e.target.value})
