@@ -5,6 +5,7 @@ import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import { string } from 'postcss-selector-parser';
 
 let model = {
     times: 0
@@ -115,6 +116,9 @@ class ECompoment extends React.Component {
          }
         this.onChar = this.onChar.bind(this)
         this.onEven = this.onEven.bind(this)
+        // this.propTypes = PropTypes({
+            // fname: string
+        // })
     }
     handleSubmit(e) {
         e.preventDefault();
