@@ -10,6 +10,7 @@ import { string } from 'postcss-selector-parser';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
 
 let model = {
+    running: false,
     times: 0
 };
 /** TypeScrip and Flow static type checking */
@@ -171,6 +172,10 @@ function Data({fname, lname}) {
     )
 
 }
+/**
+ * View Function
+ */
+const view = (model) => <div>{model.times}</div>
 const props = { a: 2, b: 3 };
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
@@ -179,7 +184,8 @@ function render() {
     // ReactDOM.render(<Sum  {...props}></Sum>, document.getElementById('root'));
     // ReactDOM.render(<SumClicker handleClick={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></SumClicker>, document.getElementById('root'));
     // ReactDOM.render(<Events ></Events>, document.getElementById('root'));
-    ReactDOM.render(<ECompoment ></ECompoment>, document.getElementById('root'));
+    // ReactDOM.render(<ECompoment ></ECompoment>, document.getElementById('root'));
+    ReactDOM.render(view(model), document.getElementById('root'));
     // ReactDOM.render(<BroswerRouter> <ECompoment ></ECompoment></BrowserRouter>, document.getElementById('root'));
     // ReactDOM.render(<TicTacTo numOfSquares={6} onSelection={(e)=> {console.log(e); console.log(e.pageX, e.pageY)}}></TicTacTo>, document.getElementById('root'));
     // ReactDOM.render(<Person a={2} b={3}></Person>, document.getElementById('root'));
