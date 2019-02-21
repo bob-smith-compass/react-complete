@@ -8,12 +8,24 @@ import _ from 'underscore';
 import { string } from 'postcss-selector-parser';
 // import Link from 'react-router-dom';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
+import { setInterval } from 'timers';
 
 let model = {
     running: false,
     times: 0,
-    time: new Date()
+    // time: new Date()
+    time: 100
 };
+const update = (model, intent) => {
+    const updates = {
+        'TICK': (model) => Object.assign(model, {time: model.time + 1})
+    };
+    return updates[intent](model);
+}
+setInterval(()=> {
+    model = update(model, 'TICK');
+    render();
+}, 1000);
 /** TypeScrip and Flow static type checking */
 // interface SumProps {
 //     a: number,
