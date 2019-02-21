@@ -114,7 +114,8 @@ class ECompoment extends React.Component {
             fname: 'David', 
             lname: 'Shams',
             clicked: 0,
-            textarea: ''
+            textarea: '',
+            data: []
          }
         this.onChar = this.onChar.bind(this)
         this.onEven = this.onEven.bind(this)
@@ -125,7 +126,10 @@ class ECompoment extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(`Submitting...`)
+        console.log(`Submitting...`);
+        // this.setState({
+        //     data: this.state.concat(this.state.fname)
+        // })
     }
     onChar(e) {
         this.setState({fname: e.target.value})
@@ -143,7 +147,7 @@ class ECompoment extends React.Component {
         return (
             <div>
                 <h3> EComponent </h3>
-                <form action="">
+                <form onSubmit={this.handleSubmit}>
                 <input onChange={this.onChar} value={this.state.fname} type="text"/>
                 <input onClick={this.onEven} onChange={this.onChar} value={this.state.lname} type="text"/>
                 <textarea name="" id="" cols="30" rows="10">
