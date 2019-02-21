@@ -129,7 +129,7 @@ class ECompoment extends React.Component {
                 <h3> EComponent </h3>
                 <form action="">
                 <input onChange={this.onChar} value={this.state.fname} type="text"/>
-                <input value={this.state.lname} type="text"/>
+                <input onChange={this.onChar} value={this.state.lname} type="text"/>
                 <button onSubmit={this.handleSubmit} type="submit">Submit</button>
                 </form>
             </div>
