@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Login from './login/Login';
+import Form from './components/form/Form';
+import Home from './components/home/Home';
 // import Route from 'react-router-dom';
 
 // class App extends Component {
@@ -78,6 +80,8 @@ class SearchBar extends React.Component {
 
   render() {
     return (
+      <div>
+
       <form onSubmit={this.handleSubmit}>
         <input
           name="text"
@@ -86,6 +90,12 @@ class SearchBar extends React.Component {
           placeholder="Type github user and press ENTER"
         />
       </form>
+      <br/>
+      <hr/>
+      <Home />
+      <Form />
+      </div>
+
     );
   }
 }

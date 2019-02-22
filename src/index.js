@@ -353,8 +353,6 @@ ReactDOM.render(<App/>,document.getElementById('app'));
  // end example
 
 
-
-
 function render() {
     // ReactDOM.render(<App onClick={()=> {model.times += 1; console.log('Clicked!'); render(); }} times={model.times}/>, document.getElementById('root'));
     // ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
